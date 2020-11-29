@@ -1,29 +1,34 @@
 //https://www.codewars.com/kata/5af15a37de4c7f223e00012d/train/javascript
 
-function menFromBoys(arr) {
-  const men = arr.filter(num => num % 2 === 0 )
-  const boy = arr.filter(num => num % 2 !== 0)
-  console.log(men)
-  console.log(boy)
+//Lisa solution
 
-  const menAsc = men.sort(function (a, b) {
-    return a - b;
-  })
-  console.log(menAsc)
+  function menFromBoys(arr) {
+    const men = arr.filter(num => num % 2 === 0)
+    const boy = arr.filter(num => num % 2 !== 0)
+    console.log(men)
+    console.log(boy)
 
-  const boyDesc = boy.sort(function (a, b) {
-    return b - a;
-  })
-  console.log(boyDesc)
+    const menAsc = men.sort(function (a, b) {
+      return a - b;
+    })
+    console.log(menAsc)
 
-  const menBoy = menAsc.concat(boyDesc)
-  const menBoyFil = menBoy.filter((num, index, arr2) => num !== arr2[index - 1])
-  console.log(menBoyFil)
-}
+    const boyDesc = boy.sort(function (a, b) {
+      return b - a;
+    })
+    console.log(boyDesc)
+
+    const menBoy = menAsc.concat(boyDesc)
+    const menBoyFil = menBoy.filter((num, index, arr2) => num !== arr2[index - 1])
+    console.log(menBoyFil)
+  }
+
 
 menFromBoys([1, 2, 5, 9, 9, 100])
 
+console.log(menFromBoys([1, 2, 5, 9, 9, 100,8,7,8]))
 
+//PSEUDO
 // [1, 2, 3, 4, 5]
 
   //grab my array and filter it for even(men) and uneven(boyr)
@@ -42,3 +47,18 @@ menFromBoys([1, 2, 5, 9, 9, 100])
 //array mix of pos and neg  AND no 0
 //repitition YES -yet no duplications when separating
 //modules % - .sort and .filter
+
+
+
+//Collin help
+
+//vs 1
+// menFromBoys = (arr) => arr.filter(num => num % 2 === 0).sort((a, b) => a - b).concat(arr.filter(num => num % 2 !== 0).sort((a, b) => b - a)).filter((num, index, arr2) => num !== arr2[index - 1])
+
+//vs 2
+//menFromBoys = (arr) => [...arr.filter(num => num % 2 === 0).sort((a, b) => a - b), ...arr.filter(num => num % 2 !== 0).sort((a, b) => b - a)].filter((num, index, arr2) => num !== arr2[index - 1])
+
+
+// menFromBoys([1, 2, 5, 9, 9, 100])
+
+// console.log(menFromBoys([1, 2, 5, 9, 9, 100, 8, 7, 8]))
