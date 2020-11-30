@@ -14,8 +14,8 @@ function createPhoneNumber(numbers) {
 //OR EASIER
 function createPhoneNumber(numbers) {
   let array = '(xxx) xxx-xxxx'
-  numbers.forEach(item => {
-    array = array.replace('x', item)
+  numbers.forEach(newNum => {
+    array = array.replace('x', newNum)
   })
   return array
 }
