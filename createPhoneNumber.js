@@ -11,6 +11,15 @@ function createPhoneNumber(numbers) {
   return null
 }
 
+//OR EASIER
+function createPhoneNumber(numbers) {
+  let array = '(xxx) xxx-xxxx'
+  numbers.forEach(item => {
+    array = array.replace('x', item)
+  })
+  return array
+}
+
 
 //source on regex https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 //regex (cheatsheet) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet
