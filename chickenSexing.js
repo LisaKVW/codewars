@@ -1,25 +1,38 @@
 // https://www.codewars.com/kata/57ed40e3bd793e9c92000fcb/train/javascript
 
-function correctness(bobsDecisions, expertDecisions) {
-count = 0
-guessed = '?' 
-for (i =0; i < bobsDecisions.length; i++){
-for(j = 0; j < expertDecisions.length; j++){
-  if (bobsDecisions[i] === expertDecisions[j]){
-    count += 1
-  } else if (bobsDecisions[i] !== expertDecisions[j] && bobsDecisions.includes(guessed) ){
-  count += 0.5
-  // } else if (bobsDecisions[i] !== expertDecisions[j] && expertDecisions.includes(guessed)) {
-  //   count += 0.5
-} else {
-  count += 0
+
+
+function correctness(bob, expert) {
+  var count = 0;
+  for (i = 0; i < bob.length; ++i)
+    if (bob[i] == expert[i])
+      count++;
+    else if (bob[i] == '?' || expert[i] == '?')
+      count += 0.5;
+  return count;
 }
-}
-return count
-}}
+
+//BELOW VERY CLOSE
+// function correctness(bobsDecisions, expertDecisions) {
+//   count = 0
+//   for (i = 0; i < bobsDecisions.length; i++) {
+//     for (j = 0; j < expertDecisions.length; j++) {
+//       if (bobsDecisions[i] === expertDecisions[j]) {
+//         count += 1
+//       } else if (bobsDecisions[i] !== expertDecisions[j] && bobsDecisions === "?" || expertDecisions === "?") {
+//         count += 0.5
+//       // } else if (bobsDecisions[i] === "?" || expertDecisions[j] === "?") {
+//       //     count += 0.5
+//       } else {
+//         count += 0
+//       }
+//     }
+//     return count
+//   }
+// }
 
 console.log(correctness(['M', '?', 'M'], ['M', 'F', '?']))
-console.log(correctness(['?', 'F', 'F', 'F','F','F'], ['M', 'M', 'M','F','F','M']))  //should give 2.5
+console.log(correctness(['?', 'F', 'F', 'F', 'F', 'F'], ['M', 'M', 'M', 'F', 'F', 'M']))  //should give 2.5 got 3
 
 
 // when bob === expert === 1point
