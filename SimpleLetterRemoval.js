@@ -1,0 +1,48 @@
+//https://www.codewars.com/kata/5b728f801db5cec7320000c7/train/javascript 
+
+function solve(s, i) {
+  let result = s.split("")
+  for (let i = 0; i < result.length; i++) {
+    if (result[i] === 'a') {
+      result.shift()
+    }
+    return result.join()
+  }
+}
+
+console.log(solve('abracadabra', 1))
+
+
+//pseudo
+// need to iterate over the string and check for a first starting at position left - untill all a gone
+// remove from a string?
+// we gonna place string in an array via split()
+// after split - we want to remove the first a via shift()
+// join() makes array into string
+
+// MUST BE DONE BELOW
+//- first remove all letter 'a',
+// 2nd remove  all letter 'b', 
+// then remove all letter then 'c', etc...
+// d
+// r
+// remove the leftmost character first.
+
+//abracadabra
+
+// Source: https://stackoverflow.com/questions/3568921/how-to-remove-part-of-a-string
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+
+//  TRIAL one works to delete first a
+// function solve(s, i) {
+//   let result = s.split("")
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i] === 'a') {
+//       result.shift()
+//     }
+//     return result.join()
+//   }
+// }
+
+// console.log(solve('abracadabra', 1))
