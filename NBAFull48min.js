@@ -2,7 +2,7 @@
 
 function pointsPer48(ppg, mpg) {
   let result = (ppg / mpg)
-  let final = ((result * 48))
+  let final = (result * 48)
   let rounded = Number(final.toFixed(1)) // toFixed - to get one decimal
   if (isNaN(rounded)) rounded = 0  // this says if rounded is NOT a number then  rounded = 0
   return rounded
