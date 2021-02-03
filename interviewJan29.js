@@ -88,3 +88,4 @@ const checkParentheses = (string) => {
 
 let result = checkParentheses("((( )()  )))")
 console.log(result)
+
