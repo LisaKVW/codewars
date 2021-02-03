@@ -3,25 +3,19 @@
 function calc(x) {
 total1 = []
 total2 = []  //total 
-let letter = x.split('') //to make string into array
 //for total1 below
-  for (let j = 0; j < letter.length; j++) {
-    total1.push(letter[j].charCodeAt(0))  //gives array with total1 char
+  for (let j = 0; j < x.length; j++) {
+    total1.push(x[j].charCodeAt(0))  //gives array with total1 char - gives [65,66,67]
   }
   console.log(total1)
 //for total 2
-for (let i=0; i < letter.length; i++){
-  total2.push(letter[i].charCodeAt(0))  //gives array with total2 char [65,66,67]
-
-// let lastNum = total2[total2.length - 1] // taking of the last num
-// let newNum = lastNum -6  //doing -6 to get total2 last array index
-let lastNumber = ''
-  if (total2[i] === 7){
-    lastNumber = (total2[i] = 1)
+for (let i=0; i < x.length; i++){
+  total2.push(x[i].charCodeAt(0))  //gives array with total2 char [65,66,67]
+  if (total2[i].includes(7)){
+    total2[i] = 1
   }
+  console.log(total2)
 }
-total2.splice(-1,1,lastNumber)  // this now gives [65, 66, 61]
-
 
 // final answer
 let final = []
