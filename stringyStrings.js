@@ -14,6 +14,7 @@ function stringy(size) {
 
 // added size -1 because or else our return gives back a number that is +1 to big
 //so doing -1, we get the right answer
+//CAN NOT so size.length - cause this will gice 1 - we have 1 string - but many letter - therfore the condition is size-1
 
 // OR
 
